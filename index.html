@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingenia Ventures</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700;800&display=swap" rel="stylesheet">
+
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-color: #0013FF; /* The specific blue you asked for */
+            background-color: #0013FF;
             color: white;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family: 'Lexend', sans-serif; /* Lexend Font */
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -19,56 +24,66 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             padding: 20px;
+            animation: fadeIn 0.5s ease-in-out;
         }
 
         h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
+            font-size: 3.5rem;
+            font-weight: 800; /* Extra Bold */
+            margin-bottom: 10px;
             letter-spacing: -1px;
+            text-transform: uppercase;
         }
 
         p.subtitle {
             font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 40px;
-            opacity: 0.9;
+            font-weight: 700; /* Bold */
+            margin-bottom: 50px;
+            line-height: 1.4;
         }
 
-        .contact-btn {
+        .btn {
             background-color: transparent;
             color: white;
-            border: 2px solid white;
-            padding: 15px 40px;
-            font-size: 1rem;
+            border: 3px solid white; /* Thicker border for bold look */
+            padding: 15px 50px;
+            font-size: 1.2rem;
+            font-weight: 700; /* Bold text in button */
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 1px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             display: inline-block;
+            font-family: 'Lexend', sans-serif;
         }
 
-        .contact-btn:hover {
+        .btn:hover {
             background-color: white;
             color: #0013FF;
         }
 
         /* Styles for the 'separate page' content */
         #contact-page {
-            display: none; /* Hidden by default */
+            display: none;
         }
 
         #contact-page p {
-            font-size: 1.5rem;
-            font-weight: 400;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 40px;
         }
         
         #contact-page a {
             color: white;
             text-decoration: underline;
+        }
+
+        /* Simple fade in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -77,19 +92,28 @@
     <div class="container" id="landing-page">
         <h1>Ingenia Ventures</h1>
         <p class="subtitle">Transformando il risparmio italiano in innovazione</p>
-        <div class="contact-btn" onclick="showContactPage()">Contact</div>
+        <div class="btn" onclick="togglePage()">Contact</div>
     </div>
 
     <div class="container" id="contact-page">
-        <p>per informazione: <a href="mailto:info@ingenia.com">info@ingenia.com</a></p>
+        <p>per informazione: <br><a href="mailto:info@ingenia.com">info@ingenia.com</a></p>
+        <div class="btn" onclick="togglePage()">Back</div>
     </div>
 
     <script>
-        function showContactPage() {
-            // Hide the landing page content
-            document.getElementById('landing-page').style.display = 'none';
-            // Show the contact page content
-            document.getElementById('contact-page').style.display = 'block';
+        function togglePage() {
+            const landing = document.getElementById('landing-page');
+            const contact = document.getElementById('contact-page');
+
+            if (landing.style.display === 'none') {
+                // Show Landing
+                landing.style.display = 'block';
+                contact.style.display = 'none';
+            } else {
+                // Show Contact
+                landing.style.display = 'none';
+                contact.style.display = 'block';
+            }
         }
     </script>
 
