@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
         body {
@@ -15,7 +15,7 @@
             padding: 0;
             background-color: #0013FF;
             color: white;
-            font-family: 'Lexend', sans-serif; /* Lexend Font */
+            font-family: 'Lexend', sans-serif;
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -26,42 +26,45 @@
         .container {
             max-width: 900px;
             padding: 20px;
-            animation: fadeIn 0.5s ease-in-out;
+            animation: fadeIn 0.8s ease-out;
         }
 
         h1 {
-            font-size: 3.5rem;
-            font-weight: 800; /* Extra Bold */
+            font-size: 4rem;
+            font-weight: 600; /* SemiBold for elegance */
             margin-bottom: 10px;
             letter-spacing: -1px;
-            text-transform: uppercase;
+            line-height: 1.1;
         }
 
         p.subtitle {
-            font-size: 1.5rem;
-            font-weight: 700; /* Bold */
+            font-size: 1.6rem;
+            font-weight: 300; /* Lighter weight for elegance */
             margin-bottom: 50px;
-            line-height: 1.4;
+            opacity: 0.9;
         }
 
         .btn {
-            background-color: transparent;
-            color: white;
-            border: 3px solid white; /* Thicker border for bold look */
-            padding: 15px 50px;
-            font-size: 1.2rem;
-            font-weight: 700; /* Bold text in button */
+            background-color: white;
+            color: #0013FF;
+            border: 2px solid white; /* Invisible border initially to prevent layout jump on hover */
+            padding: 18px 60px;
+            font-size: 1.1rem;
+            font-weight: 600;
             text-decoration: none;
-            text-transform: uppercase;
+            border-radius: 50px; /* Fully rounded/pill shape */
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             display: inline-block;
-            font-family: 'Lexend', sans-serif;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .btn:hover {
-            background-color: white;
-            color: #0013FF;
+            background-color: #0013FF;
+            color: white;
+            border: 2px solid white; /* White border appears so it doesn't blend in */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
         }
 
         /* Styles for the 'separate page' content */
@@ -70,20 +73,32 @@
         }
 
         #contact-page p {
-            font-size: 1.8rem;
-            font-weight: 700;
+            font-size: 2rem;
+            font-weight: 300;
             margin-bottom: 40px;
         }
         
         #contact-page a {
             color: white;
-            text-decoration: underline;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+            transition: border-color 0.3s;
         }
 
-        /* Simple fade in animation */
+        #contact-page a:hover {
+            border-bottom: 1px solid white;
+        }
+
+        /* Animation */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Mobile responsiveness adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            p.subtitle { font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -96,7 +111,7 @@
     </div>
 
     <div class="container" id="contact-page">
-        <p>per informazione: <br><a href="mailto:info@ingenia.com">info@ingenia.com</a></p>
+        <p>per informazione: <br><br><a href="mailto:info@ingenia.com">info@ingenia.com</a></p>
         <div class="btn" onclick="togglePage()">Back</div>
     </div>
 
@@ -106,11 +121,9 @@
             const contact = document.getElementById('contact-page');
 
             if (landing.style.display === 'none') {
-                // Show Landing
                 landing.style.display = 'block';
                 contact.style.display = 'none';
             } else {
-                // Show Contact
                 landing.style.display = 'none';
                 contact.style.display = 'block';
             }
