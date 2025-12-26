@@ -13,7 +13,8 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #0013FF;
+            /* Changed from #0013FF to #000ECC (Slightly darker blue) */
+            background-color: #000ECC; 
             color: white;
             font-family: 'Lexend', sans-serif;
             height: 100vh;
@@ -31,7 +32,7 @@
 
         h1 {
             font-size: 4rem;
-            font-weight: 600; /* SemiBold for elegance */
+            font-weight: 600; 
             margin-bottom: 10px;
             letter-spacing: -1px;
             line-height: 1.1;
@@ -39,20 +40,21 @@
 
         p.subtitle {
             font-size: 1.6rem;
-            font-weight: 300; /* Lighter weight for elegance */
+            font-weight: 300; 
             margin-bottom: 50px;
             opacity: 0.9;
         }
 
         .btn {
             background-color: white;
-            color: #0013FF;
-            border: 2px solid white; /* Invisible border initially to prevent layout jump on hover */
+            /* Text color matches background */
+            color: #000ECC; 
+            border: 2px solid white; 
             padding: 18px 60px;
             font-size: 1.1rem;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 50px; /* Fully rounded/pill shape */
+            border-radius: 50px; 
             cursor: pointer;
             transition: all 0.3s ease;
             display: inline-block;
@@ -60,9 +62,10 @@
         }
 
         .btn:hover {
-            background-color: #0013FF;
+            /* Hover background matches main background */
+            background-color: #000ECC; 
             color: white;
-            border: 2px solid white; /* White border appears so it doesn't blend in */
+            border: 2px solid white; 
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.2);
         }
@@ -111,7 +114,7 @@
     </div>
 
     <div class="container" id="contact-page">
-        <p>per informazioni: <br><br><a href="mailto:info@ingenia.com">info@ingenia.com</a></p>
+        <p>per informazione: <br><br><a href="mailto:info@ingenia.com">info@ingenia.com</a></p>
         <div class="btn" onclick="togglePage()">Back</div>
     </div>
 
