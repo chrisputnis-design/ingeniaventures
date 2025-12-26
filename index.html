@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingenia Ventures</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0013FF; /* The specific blue you asked for */
+            color: white;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        p.subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .contact-btn {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 15px 40px;
+            font-size: 1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .contact-btn:hover {
+            background-color: white;
+            color: #0013FF;
+        }
+
+        /* Styles for the 'separate page' content */
+        #contact-page {
+            display: none; /* Hidden by default */
+        }
+
+        #contact-page p {
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+        
+        #contact-page a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="landing-page">
+        <h1>Ingenia Ventures</h1>
+        <p class="subtitle">Transformando il risparmio italiano in innovazione</p>
+        <div class="contact-btn" onclick="showContactPage()">Contact</div>
+    </div>
+
+    <div class="container" id="contact-page">
+        <p>per informazione: <a href="mailto:info@ingenia.com">info@ingenia.com</a></p>
+    </div>
+
+    <script>
+        function showContactPage() {
+            // Hide the landing page content
+            document.getElementById('landing-page').style.display = 'none';
+            // Show the contact page content
+            document.getElementById('contact-page').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
